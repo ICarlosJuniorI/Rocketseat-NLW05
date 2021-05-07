@@ -10,6 +10,8 @@ class UsersService{
     this.usersRepository = getCustomRepository(UsersRepository);
   }
 
+  const 
+
   async create(email: string){
     // Verificar se o usuário existe
 
@@ -29,6 +31,13 @@ class UsersService{
 
     await this.usersRepository.save(user);
 
+    return user;
+  }
+
+  async findByEmail(email: string) {
+    const user = await this.usersRepository.findOne({
+      email,
+    });
     return user;
   }
 }
