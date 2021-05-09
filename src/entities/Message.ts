@@ -1,10 +1,10 @@
 import { Entity, PrimaryColumn, CreateDateColumn, Column, ManyToOne, JoinColumn } from "typeorm";
+
 import { v4 as uuid } from "uuid";
 import { User } from "./User";
 
 @Entity("messages")
-class Message{
-
+class Message {
   @PrimaryColumn()
   id: string;
 
@@ -23,12 +23,12 @@ class Message{
 
   @CreateDateColumn()
   created_at: Date;
-  
-  constructor(){
-    if(!this.id){
+
+  constructor() {
+    if (!this.id) {
       this.id = uuid();
     }
-  }  
+  }
 }
 
 export { Message };

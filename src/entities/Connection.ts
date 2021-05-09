@@ -1,9 +1,10 @@
-import { Entity, PrimaryColumn, CreateDateColumn, Column, ManyToOne, JoinColumn, UpdateDateColumn } from "typeorm";
+import { Entity, PrimaryColumn, CreateDateColumn, Column, ManyToOne, JoinColumn, UpdateDateColumn} from "typeorm";
+
 import { v4 as uuid } from "uuid";
 import { User } from "./User";
 
 @Entity("connections")
-class Connection{
+class Connection {
   @PrimaryColumn()
   id: string;
 
@@ -25,9 +26,9 @@ class Connection{
 
   @UpdateDateColumn()
   updated_at: Date;
-  
-  constructor(){
-    if(!this.id){
+
+  constructor() {
+    if (!this.id) {
       this.id = uuid();
     }
   }

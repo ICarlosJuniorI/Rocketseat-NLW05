@@ -14,6 +14,10 @@ app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
 
 app.get("/pages/client", (req, res) => {
+  return res.render("html/admin.html");
+});
+
+app.get("/pages/admin", (req, res) => {
   return res.render("html/client.html");
 });
 
